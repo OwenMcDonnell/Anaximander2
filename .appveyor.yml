@@ -6,7 +6,7 @@ init:
 
 
 image:
-- Visual Studio 2017
+#- Visual Studio 2017
 - Ubuntu
 
 configuration: Release
@@ -26,9 +26,9 @@ skip_commits:
   - LICENSE
   - README.md
 
-cache:
-- Source\packages -> Source\**\packages.config
-- '%LocalAppData%\NuGet\Cache'
+#cache:
+#- Source\packages -> Source\**\packages.config
+#- '%LocalAppData%\NuGet\Cache'
 
 assembly_info:
   patch: true
@@ -84,9 +84,9 @@ artifacts:
 deploy:
   provider: GitHub
   auth_token:
-    secure: "QUqhwTOVl7qBikVjSddIdfQ/mJAYlmSwsPPxTW8kSPJKALifV/E3UFycqJyf6USR"
+    secure: ""
   artifact: anaximander2-$(EDITION)
   draft: true
   prerelease: false
   on:
-    appveyor_repo_tag: true
+    APPVEYOR_REPO_TAG: true
